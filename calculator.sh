@@ -13,16 +13,16 @@ read second
 
 case $func in
     1)
-        awk -v one=$first -v two=$second 'BEGIN { print ( one + two ) }'
+        printf %.10f\\n "$((1000000000 * $first + $second))e-9"
         ;;
     2)
-        awk -v one=$first -v two=$second 'BEGIN { print ( one - two ) }'
+        printf %.10f\\n "$((1000000000 * $first - $second))e-9"
         ;;
     3)
-        awk -v one=$first -v two=$second 'BEGIN { print ( one * two ) }'
+        printf %.10f\\n "$((1000000000 * $first * $second))e-9"
         ;;
     4)
-        awk -v one=$first -v two=$second 'BEGIN { print ( one / two ) }'
+        printf %.10f\\n "$((1000000000 * $first / $second))e-9"
         ;;
     *)
         echo "Invalid"
